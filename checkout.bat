@@ -4,17 +4,6 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 echo Starting checkout process...
 echo.
 
-REM Commit and push to main
-echo Committing all changes to the main branch...
-git checkout main
-git add .
-git commit -m "Local changes"
-git push origin main
-IF !ERRORLEVEL! NEQ 0 (
-    echo Failed to push changes to main. Exiting...
-    goto :error
-)
-
 REM Render the Quarto project
 echo Rendering Quarto project...
 quarto render
@@ -23,7 +12,17 @@ IF !ERRORLEVEL! NEQ 0 (
     goto :error
 )
 
-REM Updating gh-pages branch
+REM Commit to main
+echo Committing changes to the main branch...
+git add .
+git commit -m "Commit rendered site"
+git push origin main
+IF !ERRORLEVEL! NEQ 0 (
+    echo Failed to push changes to main. Exiting...
+    goto :error
+)
+
+REM Switch to gh-pages branch
 echo Switching to gh-pages branch...
 git checkout gh-pages
 IF !ERRORLEVEL! NEQ 0 (
@@ -31,20 +30,11 @@ IF !ERRORLEVEL! NEQ 0 (
     goto :error
 )
 
+REM Clear gh-pages and copy new content
 echo Clearing old content from gh-pages...
 git rm -rf .
-IF !ERRORLEVEL! NEQ 0 (
-    echo Failed to clear old content. Exiting...
-    goto :error
-)
-
 echo Copying new content from _site to gh-pages...
-xcopy /E /I /Y "..\_site\*" "."
-IF !ERRORLEVEL! NEQ 0 (
-    echo Failed to copy new content. Exiting...
-    goto :error
-)
-
+xcopy /E /I /Y "_site\*" "."
 echo Committing new content to gh-pages...
 git add .
 git commit -m "Update website"
