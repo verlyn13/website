@@ -1,4 +1,5 @@
 @echo off
+
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 echo Starting checkout process...
@@ -46,6 +47,10 @@ IF !ERRORLEVEL! NEQ 0 (
   goto :error
 )
 
+REM Display the contents of the temporary directory
+echo Contents of the temporary directory:
+dir /B "..\temp_site"
+
 REM Copy new content from the temporary directory to gh-pages
 echo Copying new content to gh-pages...
 xcopy /E /I /Y "..\temp_site\*" "."
@@ -53,6 +58,10 @@ IF !ERRORLEVEL! NEQ 0 (
   echo Failed to copy new content. Exiting...
   goto :error
 )
+
+REM Display the contents of the gh-pages branch after copying
+echo Contents of the gh-pages branch after copying:
+dir /B
 
 REM Stage and commit changes in gh-pages
 echo Committing new content to gh-pages...
