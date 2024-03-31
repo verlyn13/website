@@ -1,7 +1,100 @@
 ---
-title: "wut wut"
+title: "Jeff's Math Site"
 ---
 
-## Quarto
+# Dr. Jeffrey Johnson
+### Mathematics Professor | Researcher | Educator
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Welcome to my professional and academic portfolio. I am a dedicated educator and researcher in the field of mathematics, with a passion for developing innovative teaching methods and interactive tools to enhance learning experiences.
+
+---
+
+## About Me
+
+I'm super great. I hold a PhD in Mathematics and currently serve as a professor teaching undergraduate courses. My research interests include [Your Research Interests], and I have been published in various respected academic journals. [A brief overview of your academic background and achievements.]
+
+---
+
+## Teaching Philosophy
+
+My teaching philosophy centers on [Your Teaching Philosophy]. I strive to create an engaging and inclusive learning environment that encourages curiosity, critical thinking, and practical application of mathematical concepts.
+
+---
+
+## Research and Publications
+
+My research contributions to the field of mathematics include [Brief Description of Research Work]. Highlights of my publications include:
+
+- [Publication Title 1](Publication_Link_1)
+- [Publication Title 2](Publication_Link_2)
+- [More Publications...]
+
+For a comprehensive list of my publications, [click here](link_to_full_publications_list).
+
+---
+
+## Educational Materials
+
+I am actively involved in creating comprehensive educational materials aimed at enhancing the learning experience in mathematics. Below you'll find links to web documents and textbooks I've authored, utilizing PreTeXt, an XML application for creating high-quality educational content.
+
+### Textbooks in Progress
+
+Here are some of the textbooks I'm currently writing, which cover various topics in mathematics:
+
+- **Introduction to Calculus**: An in-depth exploration of calculus fundamentals, tailored for first-year university students. [Access Textbook](link_to_textbook_1)
+- **Linear Algebra Applied**: A practical approach to linear algebra, emphasizing its applications in engineering and computer science. [Access Textbook](link_to_textbook_2)
+
+### Problem Sets and Examples
+
+In addition to textbooks, I provide detailed explanations and examples for selected problems to further aid in understanding complex concepts:
+
+- **Calculus Problem Set**: Solutions and walkthroughs for challenging calculus problems. [View Problems](link_to_problems_calculus)
+- **Linear Algebra Examples**: A collection of key examples in linear algebra, demonstrating core principles and techniques. [View Examples](link_to_examples_linear_algebra)
+
+Feel free to explore these resources, and stay tuned for more content as these projects evolve.
+
+---
+
+
+
+
+## Teaching Resources
+
+I provide a wealth of resources for my students, including lecture notes, study guides, and interactive assignments to support their academic journey:
+
+- [Lecture Series on Topic 1](Link_to_Lecture_Series_1)
+- [Interactive Assignment on Topic 2](Link_to_Interactive_Assignment)
+- [More Resources...]
+
+---
+
+## Interactive Tools
+
+I've developed several interactive tools to aid in the understanding of complex mathematical concepts:
+
+- **MathBot**: A chatbot designed to answer common mathematical queries and guide students through problem-solving processes. [Try MathBot](link_to_MathBot).
+- **CalcTool**: An online calculator for [Specific Mathematical Functions] that simplifies complex calculations. [Use CalcTool](link_to_CalcTool).
+
+---
+
+## Latest Updates
+
+Stay up-to-date with my latest projects, research findings, and thoughts on mathematics education:
+
+- [Blog Post Title 1](Link_to_Blog_Post_1) - [Date]
+- [Blog Post Title 2](Link_to_Blog_Post_2) - [Date]
+- [More Updates...]
+
+For regular updates, [subscribe to my newsletter](link_to_subscribe).
+
+---
+
+## Get in Touch
+
+For collaborations, speaking engagements, or any inquiries, please feel free to reach out:
+
+- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **LinkedIn**: [Your LinkedIn](Your_LinkedIn_Link)
+- **Twitter**: [@YourTwitterHandle](Your_Twitter_Link)
+
+Or, fill out [my contact form](link_to_contact_form) and I'll get back to you as soon as possible.
