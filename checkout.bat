@@ -14,8 +14,8 @@ IF !ERRORLEVEL! NEQ 0 (
 
 REM Store the rendered content in a temporary directory outside the repo
 echo Copying rendered content to a temporary directory...
-robocopy "_site" "..\temp_site" /E /NFL /NDL /NJH /NJS /nc /ns /np
-IF !ERRORLEVEL! GTR 1 (
+xcopy /E /I /Y "_site" "..\temp_site"
+IF !ERRORLEVEL! NEQ 0 (
   echo Failed to copy rendered content. Exiting...
   goto :error
 )
@@ -48,8 +48,8 @@ IF !ERRORLEVEL! NEQ 0 (
 
 REM Copy new content from the temporary directory to gh-pages
 echo Copying new content to gh-pages...
-robocopy "..\temp_site" "." /E /NFL /NDL /NJH /NJS /nc /ns /np
-IF !ERRORLEVEL! GTR 1 (
+copy "..\temp_site\*" "." /Y
+IF !ERRORLEVEL! NEQ 0 (
   echo Failed to copy new content. Exiting...
   goto :error
 )
