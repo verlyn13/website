@@ -1,6 +1,6 @@
 project:
   title: "website"
-  output-dir: _site
+  output-dir: .
 
 
 
