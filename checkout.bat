@@ -33,8 +33,7 @@ IF !ERRORLEVEL! NEQ 0 (
 
 REM Clear gh-pages branch
 echo Clearing old content from gh-pages...
-git rm -rf ./*
-git clean -fdx
+git rm -rf *
 IF !ERRORLEVEL! NEQ 0 (
   echo Failed to clear old content. Exiting...
   goto :error
@@ -42,19 +41,33 @@ IF !ERRORLEVEL! NEQ 0 (
 
 REM Copy new content from _site to gh-pages
 echo Copying new content from _site to gh-pages...
-xcopy /E /I /Y "_site\*" "%cd%"
+xcopy /E /I /Y "_site" "."
 IF !ERRORLEVEL! NEQ 0 (
   echo Failed to copy new content. Exiting...
   goto :error
 )
 
+REM Stage changes in gh-pages
+echo Staging changes in gh-pages...
+git add -A
+IF !ERRORLEVEL! NEQ 0 (
+  echo Failed to stage changes in gh-pages. Exiting...
+  goto :error
+)
+
 REM Commit changes to gh-pages
-echo Committing new content to gh-pages...
-git add --all
+echo Committing changes to gh-pages...
 git commit -m "Update website"
+IF !ERRORLEVEL! NEQ 0 (
+  echo Failed to commit changes to gh-pages. Exiting...
+  goto :error
+)
+
+REM Push changes to gh-pages
+echo Pushing changes to gh-pages...
 git push origin gh-pages
 IF !ERRORLEVEL! NEQ 0 (
-  echo Failed to push to gh-pages. Exiting...
+  echo Failed to push changes to gh-pages. Exiting...
   goto :error
 )
 
@@ -63,7 +76,7 @@ goto :end
 
 :error
 echo An error occurred, please check the messages above.
+pause
 
 :end
 ENDLOCAL
-pause
