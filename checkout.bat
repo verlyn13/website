@@ -14,8 +14,8 @@ IF !ERRORLEVEL! NEQ 0 (
 
 REM Store the rendered content in a temporary directory outside the repo
 echo Copying rendered content to a temporary directory...
-xcopy /E /I /Y "_site" "..\temp_site"
-IF !ERRORLEVEL! NEQ 0 (
+robocopy "_site" "..\temp_site" /E /NFL /NDL /NJH /NJS /nc /ns /np
+IF !ERRORLEVEL! GTR 1 (
   echo Failed to copy rendered content. Exiting...
   goto :error
 )
@@ -41,27 +41,18 @@ IF !ERRORLEVEL! NEQ 0 (
 REM Clear gh-pages branch
 echo Clearing old content from gh-pages...
 git rm -rf *
-git clean -fdx
 IF !ERRORLEVEL! NEQ 0 (
   echo Failed to clear old content. Exiting...
   goto :error
 )
 
-REM Display the contents of the temporary directory
-echo Contents of the temporary directory:
-dir /B "..\temp_site"
-
 REM Copy new content from the temporary directory to gh-pages
 echo Copying new content to gh-pages...
-xcopy /E /I /Y "..\temp_site\*" "."
-IF !ERRORLEVEL! NEQ 0 (
+robocopy "..\temp_site" "." /E /NFL /NDL /NJH /NJS /nc /ns /np
+IF !ERRORLEVEL! GTR 1 (
   echo Failed to copy new content. Exiting...
   goto :error
 )
-
-REM Display the contents of the gh-pages branch after copying
-echo Contents of the gh-pages branch after copying:
-dir /B
 
 REM Stage and commit changes in gh-pages
 echo Committing new content to gh-pages...
